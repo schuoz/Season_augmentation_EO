@@ -1,0 +1,9 @@
+input_path: data/example_source.tif
+output_path: outputs/inference/augmented.tif
+checkpoint_generator: outputs/checkpoints/generator_best.pt
+checkpoint_param_head: outputs/checkpoints/param_head_best.pt
+bands: [1, 2, 3, 4]
+normalize_mean: [0.2, 0.2, 0.2, 0.2]
+normalize_std: [0.1, 0.1, 0.1, 0.1]
+aug_param_dim: 8
+save_params_json: outputs/inference/params.json

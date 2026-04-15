@@ -1,0 +1,27 @@
+seed: 42
+output_dir: outputs/baseline
+data:
+  train_csv: data/train_pairs.csv
+  val_csv: data/val_pairs.csv
+  bands: [1, 2, 3, 4]
+  patch_size: 256
+  normalize_mean: [0.2, 0.2, 0.2, 0.2]
+  normalize_std: [0.1, 0.1, 0.1, 0.1]
+  cloud_mask_value: null
+training:
+  epochs: 20
+  batch_size: 4
+  num_workers: 4
+  lr: 0.0002
+  lambda_recon: 10.0
+  lambda_gan: 1.0
+  lambda_param: 2.0
+  amp: true
+model:
+  in_channels: 4
+  base_channels: 64
+  aug_param_dim: 8
+  use_gan: true
+distributed:
+  backend: nccl
+  world_size: 1
